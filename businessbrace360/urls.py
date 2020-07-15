@@ -25,5 +25,5 @@ router.register(r'jobs', JobViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(router.urls)),
-    path('api/v1/', include('jobs.urls')),
+    path('api/v1/', include('users.urls')),
 ]

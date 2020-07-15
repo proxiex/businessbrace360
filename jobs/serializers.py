@@ -14,6 +14,7 @@ class JobSerializer(serializers.ModelSerializer):
 
         model = models.Job
         fields = [
+            'id',
             'title',
             'location',
             'description',
