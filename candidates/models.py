@@ -44,5 +44,11 @@ class TestResult(models.Model):
       max_length = 100
     )
 
+    created_at = models.DateTimeField(
+        auto_now_add=True, 
+        auto_now=False,
+        verbose_name='Created At'
+    )
+
     def __str__(self):
       return f"{self.pk})  {self.candidate } {self.score} - {self.status}"

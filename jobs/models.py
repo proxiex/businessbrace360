@@ -13,4 +13,4 @@ class Job(models.Model):
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
 
     def __str__(self):
-        return "%d) %s: %s" % (self.pk, self.title)
+        return "%d) %s: %s" % (self.pk, self.title, self.location)
