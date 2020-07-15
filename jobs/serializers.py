@@ -1,4 +1,4 @@
-"""Users serializer."""
+"""Jobs serializer."""
 
 import os
 from django.conf import settings
