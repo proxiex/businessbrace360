@@ -8,7 +8,7 @@ from rest_framework import permissions, generics, status
 from rest_framework.response import Response
 
 from .serializers import TokenSerializer, UserSerializer
-from users.helpers.decorators import validate_user_login
+from user_auth.helpers.decorators import validate_user_login
 
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER

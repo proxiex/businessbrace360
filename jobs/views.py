@@ -13,5 +13,5 @@ class JobViewSet(viewsets.ModelViewSet):
 
     serializer_class = serializers.JobSerializer
     queryset = models.Job.objects.all()
-    permission_classes = [permissions.IsSuperUserOrReadOnly, ]
+    permission_classes = [AllowAny, ]
 
