@@ -4,7 +4,7 @@ from rest_framework import permissions, generics, status
 from rest_framework import viewsets
 from rest_framework.response import Response
 
-from . import models, serializers
+from . import models, serializers, permissions
 
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
@@ -18,7 +18,7 @@ class DocumentViewSet(viewsets.ModelViewSet):
 class CertificateViewSet(viewsets.ModelViewSet):
     queryset = models.Certificate.objects.all()
     serializer_class = serializers.CertificateSerializer
-    permission_classes = (AllowAny,)
+    permission_classes = (permissions.IsSuperUserOrWriteRetriveOnly,)
 
 
 class PersonalInfoViewSet(viewsets.ModelViewSet):
