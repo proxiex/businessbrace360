@@ -41,9 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_jwt',
+    'user_auth',
     'candidates',
     'dashboard',
-    'users',
     'jobs',
 ]
 
@@ -59,7 +59,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'businessbrace360.urls'
 
-AUTH_USER_MODEL = 'users.CustomUser'
+AUTH_USER_MODEL = 'user_auth.CustomUser'
 
 TEMPLATES = [
     {
@@ -204,3 +204,7 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
