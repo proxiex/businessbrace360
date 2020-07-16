@@ -5,7 +5,7 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 
 from . import models, serializers, permissions
-from .helper.email import email_test_congrats
+from .helper.email import email_test_congrats, email_success_congrats
 
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
@@ -13,8 +13,7 @@ jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 class CandidateViewSet(viewsets.ModelViewSet):
     queryset = models.Candidate.objects.all()
     serializer_class = serializers.CandidateSerializer
-    # permission_classes = (permissions.IsSuperUserOrWriteOnly,)
-    permission_classes = (AllowAny,)
+    permission_classes = (permissions.IsSuperUserOrWriteOnly,)
 
 
     def update(self, request, pk):
@@ -64,7 +63,7 @@ class CandidateViewSet(viewsets.ModelViewSet):
                 email_test_congrats(email, first_name)
             
             elif status_ == 'succesful-candidate':
-                email_test_congrats('sd', 'sd')
+                email_success_congrats(email, first_name)
 
         queryset = models.Candidate.objects.filter(id=pk)
         candidate = serializers.CandidateSerializer(queryset, many=True)
@@ -87,9 +86,6 @@ class TestResultsViewSet(viewsets.ModelViewSet):
 
         if score:
             test_result.update(score=score)
-        
-        if status_:
-            candidate.update(status=status_)
 
-            if status_ == 'passed':
-                email_test_congrats(email, first_name)
+        if status_:
+            test_result.update(status=status_)

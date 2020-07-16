@@ -18,3 +18,13 @@ def email_test_congrats(email, first_name):
     msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
     msg.attach_alternative(html_content, "text/html")
     msg.send()
+
+def email_success_congrats(email, first_name):
+    """Email booking report to user."""
+    subject, from_email, to = 'Regarding your application to Businessbrace360', 'noreply@syneinc.com', email
+    html_content = render_to_string('emails/success_congrats.html', {'first_name': first_name})
+    text_content = strip_tags(html_content)
+
+    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+    msg.attach_alternative(html_content, "text/html")
+    msg.send()
