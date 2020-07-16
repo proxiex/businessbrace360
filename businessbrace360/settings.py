@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '2i5iubwhe6b9wfmsm+3y*=(f+k(!46g_9(k3nlsnt4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ['DEBUG']) 
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'businessbrace360.herokuapp.com']
 
 
 # Application definition
