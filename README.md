@@ -1,6 +1,6 @@
 # businessbrace360
 
-With the curent situation with Covid-19 epidemic, this is a web platform that allows to test candidates for recruitment remotely.
+With the current situation with Covid-19 epidemic, this is a web platform that allows testing candidates for recruitment remotely.
 
 ## Features
 - Create new job posting or offers (admin)
