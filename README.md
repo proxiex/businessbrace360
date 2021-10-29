@@ -2,6 +2,8 @@
 
 With the current situation with Covid-19 epidemic, this is a web platform that allows testing candidates for recruitment remotely.
 
+## Hacktoberfest is part of this project now.
+
 ## Features
 - Create new job posting or offers (admin)
 - View job posting
