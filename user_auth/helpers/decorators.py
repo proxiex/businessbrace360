@@ -7,6 +7,7 @@ from rest_framework.views import status
 
 def validate_password(password):
     """Validate Password.
+
     :params: password
     :returns: Boolean
     """
@@ -17,6 +18,7 @@ def validate_password(password):
 
 def validate_email(email):
     """Validate Email.
+
     :params: email
     :returns: Boolean
     """
@@ -27,6 +29,7 @@ def validate_email(email):
 
 def validate_user_login(fn):
     """Validate user login data decorator.
+
     :returns: fn
     """
     def decorator(*args, **kwargs):
