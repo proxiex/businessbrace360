@@ -22,7 +22,7 @@ class Certificate(models.Model):
 
 
 class PersonalInfo(models.Model):
-    """Personal infor model"""
+    """Personal info model"""
 
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     marital_status = models.CharField(
